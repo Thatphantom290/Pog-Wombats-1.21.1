@@ -11,21 +11,21 @@ import net.minecraft.util.Mth;
 
 public class WombatModel <T extends Wombat> extends HierarchicalModel<T> {
     private final ModelPart root;
-    private final ModelPart right_leg;
-    private final ModelPart left_leg;
-    private final ModelPart right_arm;
-    private final ModelPart left_arm;
-    private final ModelPart head;
     private final ModelPart body;
+    private final ModelPart leftarm;
+    private final ModelPart leftleg;
+    private final ModelPart rightarm;
+    private final ModelPart rightleg;
+    private final ModelPart head;
 
     public WombatModel(ModelPart root) {
         this.root = root.getChild("root");
-        this.right_leg = this.root.getChild("right_leg");
-        this.left_leg = this.root.getChild("left_leg");
-        this.right_arm = this.root.getChild("right_arm");
-        this.left_arm = this.root.getChild("left_arm");
-        this.head = this.root.getChild("head");
         this.body = this.root.getChild("body");
+        this.leftarm = this.root.getChild("leftarm");
+        this.leftleg = this.root.getChild("leftleg");
+        this.rightarm = this.root.getChild("rightarm");
+        this.rightleg = this.root.getChild("rightleg");
+        this.head = this.root.getChild("head");
     }
 
     public static LayerDefinition createBodyLayer() {
@@ -34,36 +34,39 @@ public class WombatModel <T extends Wombat> extends HierarchicalModel<T> {
 
         PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
 
-        PartDefinition right_leg = root.addOrReplaceChild("right_leg", CubeListBuilder.create().texOffs(28, 33).addBox(-2.0F, -2.0F, -2.0F, 3.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(3.0F, -3.0F, 5.0F));
+        PartDefinition body = root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-6.0F, -4.0F, -4.0F, 11.0F, 7.0F, 11.0F, new CubeDeformation(0.0F)), PartPose.offset(0.5F, -6.0F, 0.0F));
 
-        PartDefinition left_leg = root.addOrReplaceChild("left_leg", CubeListBuilder.create().texOffs(28, 24).addBox(-1.0F, -2.0F, -2.0F, 3.0F, 5.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.0F, -3.0F, 5.0F));
+        PartDefinition leftarm = root.addOrReplaceChild("leftarm", CubeListBuilder.create().texOffs(0, 23).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.5F, -3.0F, -1.5F));
 
-        PartDefinition right_arm = root.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(12, 40).addBox(-1.0F, -2.0F, -2.0F, 3.0F, 5.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, -3.0F, -4.0F));
+        PartDefinition leftleg = root.addOrReplaceChild("leftleg", CubeListBuilder.create().texOffs(0, 29).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(-3.5F, -3.0F, 5.5F));
 
-        PartDefinition left_arm = root.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(0, 40).addBox(-2.0F, -2.0F, -2.0F, 3.0F, 5.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, -3.0F, -4.0F));
+        PartDefinition rightarm = root.addOrReplaceChild("rightarm", CubeListBuilder.create().texOffs(12, 23).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(3.5F, -3.0F, -1.5F));
 
-        PartDefinition head = root.addOrReplaceChild("head", CubeListBuilder.create().texOffs(26, 46).addBox(-4.5F, -1.0603F, -3.658F, 9.0F, 7.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -10.0F, -6.0F, -0.3491F, 0.0F, 0.0F));
+        PartDefinition rightleg = root.addOrReplaceChild("rightleg", CubeListBuilder.create().texOffs(12, 29).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(3.5F, -3.0F, 5.5F));
 
-        PartDefinition body = root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-5.0F, 0.0F, -7.0F, 10.0F, 9.0F, 15.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -12.0F, 0.0F));
+        PartDefinition head = root.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 36).addBox(-4.0F, -5.0F, -4.0F, 9.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
+                .texOffs(24, 30).addBox(-1.0F, -3.0F, -5.0F, 3.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
+                .texOffs(32, 30).addBox(-5.0F, -7.0F, -1.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F))
+                .texOffs(32, 33).addBox(4.0F, -7.0F, -1.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.5F, -7.0F, -3.0F));
 
-        return LayerDefinition.create(meshdefinition, 64, 64);
+        return LayerDefinition.create(meshdefinition, 48, 48);
     }
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
         this.head.resetPose();
-        this.left_arm.resetPose();
-        this.right_arm.resetPose();
-        this.left_leg.resetPose();
-        this.right_leg.resetPose();
+        this.leftarm.resetPose();
+        this.rightarm.resetPose();
+        this.leftleg.resetPose();
+        this.rightleg.resetPose();
 
         this.applyHeadRotation(netHeadYaw, headPitch);
 
-        this.left_arm.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
-        this.right_arm.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
-        this.left_leg.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
-        this.right_leg.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+        this.leftarm.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+        this.rightarm.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
+        this.leftleg.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
+        this.rightleg.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
     }
 
     private void applyHeadRotation(float headYaw, float headPitch) {

@@ -13,7 +13,7 @@ import net.minecraft.client.model.EntityModel;
 
     public class WombatRenderer extends MobRenderer<Wombat, EntityModel<Wombat>> {
 
-    private static final ResourceLocation ADULT_TEXTURE = ResourceLocation.fromNamespaceAndPath("pogwombats", "textures/entity/wombat/wombat_adult.png");
+    private static final ResourceLocation ADULT_TEXTURE = ResourceLocation.fromNamespaceAndPath("pogwombats", "textures/entity/wombat/wombat.png");
     private static final ResourceLocation BABY_TEXTURE = ResourceLocation.fromNamespaceAndPath("pogwombats", "textures/entity/wombat/wombat_baby.png");
 
     private final EntityModel<Wombat> adultModel;
