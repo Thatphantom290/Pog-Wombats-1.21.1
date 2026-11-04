@@ -45,6 +45,8 @@ public class WombatModel <T extends Wombat> extends HierarchicalModel<T> {
         PartDefinition rightleg = root.addOrReplaceChild("rightleg", CubeListBuilder.create().texOffs(12, 29).addBox(-1.5F, 0.0F, -1.5F, 3.0F, 3.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(3.5F, -3.0F, 5.5F));
 
         PartDefinition head = root.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 36).addBox(-4.0F, -5.0F, -4.0F, 9.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
+                .texOffs(36, 39).addBox(-1.0F, -11.0F, -2.0F, 3.0F, 6.0F, 3.0F, new CubeDeformation(0.0F))
+                .texOffs(18, 20).addBox(-5.0F, -5.1F, -5.0F, 11.0F, 0.0F, 8.0F, new CubeDeformation(0.0F))
                 .texOffs(24, 30).addBox(-1.0F, -3.0F, -5.0F, 3.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(32, 30).addBox(-5.0F, -7.0F, -1.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F))
                 .texOffs(32, 33).addBox(4.0F, -7.0F, -1.0F, 2.0F, 3.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(-0.5F, -7.0F, -3.0F));

@@ -15,6 +15,7 @@ import net.minecraft.client.model.EntityModel;
 
     private static final ResourceLocation ADULT_TEXTURE = ResourceLocation.fromNamespaceAndPath("pogwombats", "textures/entity/wombat/wombat.png");
     private static final ResourceLocation BABY_TEXTURE = ResourceLocation.fromNamespaceAndPath("pogwombats", "textures/entity/wombat/wombat_baby.png");
+    private static final ResourceLocation TOPHAT = ResourceLocation.fromNamespaceAndPath("pogwombats", "textures/entity/wombat/wombat_tophat.png");
 
     private final EntityModel<Wombat> adultModel;
     private final EntityModel<Wombat> babyModel;
