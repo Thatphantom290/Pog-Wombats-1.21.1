@@ -59,10 +59,20 @@ public class BabyWombatModel<T extends Wombat> extends HierarchicalModel<T> {
         this.leftleg.resetPose();
         this.rightleg.resetPose();
 
+        this.applyHeadRotation(netHeadYaw, headPitch);
+
         this.leftarm.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
         this.rightarm.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
         this.leftleg.xRot = Mth.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
         this.rightleg.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+    }
+
+    private void applyHeadRotation(float headYaw, float headPitch) {
+        headYaw = Mth.clamp(headYaw, -30f, 30f);
+        headPitch = Mth.clamp(headPitch, -25f, 45);
+
+        this.head.yRot = headYaw * ((float)Math.PI / 130f);
+        this.head.xRot = headPitch *  ((float)Math.PI / 130f);
     }
 
     @Override

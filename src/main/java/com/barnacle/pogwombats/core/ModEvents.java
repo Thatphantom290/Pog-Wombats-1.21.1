@@ -20,5 +20,13 @@ public class ModEvents {
                 Animal::checkAnimalSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR
         );
+        event.register(
+                PWEntities.PACARANA.get(),
+                SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR
+        );
+
     }
 }

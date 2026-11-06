@@ -75,8 +75,8 @@ public class WombatModel <T extends Wombat> extends HierarchicalModel<T> {
         headYaw = Mth.clamp(headYaw, -30f, 30f);
         headPitch = Mth.clamp(headPitch, -25f, 45);
 
-        this.head.yRot = headYaw * ((float)Math.PI / 180f);
-        this.head.xRot = headPitch *  ((float)Math.PI / 180f);
+        this.head.yRot = headYaw * ((float)Math.PI / 130f);
+        this.head.xRot = headPitch *  ((float)Math.PI / 130f);
     }
 
     @Override

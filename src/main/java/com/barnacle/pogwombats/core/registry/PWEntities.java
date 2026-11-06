@@ -1,6 +1,7 @@
 package com.barnacle.pogwombats.core.registry;
 
 import com.barnacle.pogwombats.PogWombats;
+import com.barnacle.pogwombats.common.entity.Pacarana;
 import com.barnacle.pogwombats.common.entity.Wombat;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -17,6 +18,10 @@ public class PWEntities {
     public static final Supplier<EntityType<Wombat>> WOMBAT =
             ENTITY_TYPES.register("wombat", () -> EntityType.Builder.of(Wombat::new, MobCategory.CREATURE)
                     .sized(0.9f, 0.9f).build("wombat"));
+
+    public static final Supplier<EntityType<Pacarana>> PACARANA =
+                ENTITY_TYPES.register("pacarana", () -> EntityType.Builder.of(Pacarana::new, MobCategory.CREATURE)
+                        .sized(0.9f, 0.9f).build("pacarana"));
 
 
     public static void register(IEventBus eventBus) {

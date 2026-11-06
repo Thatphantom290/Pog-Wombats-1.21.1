@@ -1,5 +1,6 @@
 package com.barnacle.pogwombats.common;
 
+import com.barnacle.pogwombats.common.entity.Pacarana;
 import com.barnacle.pogwombats.common.entity.Wombat;
 import com.barnacle.pogwombats.core.registry.PWEntities;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -12,5 +13,6 @@ public class ModCommonEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(PWEntities.WOMBAT.get(), Wombat.createAttributes().build());
+        event.put(PWEntities.PACARANA.get(), Pacarana.createAttributes().build());
     }
 }

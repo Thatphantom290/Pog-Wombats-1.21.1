@@ -1,7 +1,10 @@
 package com.barnacle.pogwombats.client;
 
+import com.barnacle.pogwombats.client.model.BabyPacaranaModel;
 import com.barnacle.pogwombats.client.model.BabyWombatModel;
+import com.barnacle.pogwombats.client.model.PacaranaModel;
 import com.barnacle.pogwombats.client.model.WombatModel;
+import com.barnacle.pogwombats.client.renderer.PacaranaRenderer;
 import com.barnacle.pogwombats.client.renderer.WombatRenderer;
 import com.barnacle.pogwombats.core.registry.PWEntities;
 import net.neoforged.api.distmarker.Dist;
@@ -16,10 +19,13 @@ public class ModClientEvents {
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.WOMBAT, WombatModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.BABY_WOMBAT, BabyWombatModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.PACARANA, PacaranaModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.BABY_PACARANA, BabyPacaranaModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(PWEntities.WOMBAT.get(), WombatRenderer::new);
+        event.registerEntityRenderer(PWEntities.PACARANA.get(), PacaranaRenderer::new);
     }
 }

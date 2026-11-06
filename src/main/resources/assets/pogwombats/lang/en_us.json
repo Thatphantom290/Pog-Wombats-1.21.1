@@ -1,4 +1,7 @@
 {
   "entity.pogwombats.wombat": "Wombat",
-  "item.pogwombats.wombat_spawn_egg": "Wombat Spawn Egg"
+  "item.pogwombats.wombat_spawn_egg": "Wombat Spawn Egg",
+
+  "entity.pogwombats.pacarana": "Pacarana",
+  "item.pogwombats.pacarana_spawn_egg": "Pacarana Spawn Egg"
 }

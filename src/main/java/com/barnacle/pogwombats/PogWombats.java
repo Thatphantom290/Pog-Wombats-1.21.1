@@ -1,5 +1,6 @@
 package com.barnacle.pogwombats;
 
+import com.barnacle.pogwombats.client.renderer.PacaranaRenderer;
 import com.barnacle.pogwombats.client.renderer.WombatRenderer;
 import com.barnacle.pogwombats.core.registry.PWEntities;
 import com.barnacle.pogwombats.core.registry.PWItems;
@@ -59,6 +60,7 @@ public class PogWombats {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
                 EntityRenderers.register(PWEntities.WOMBAT.get(), WombatRenderer::new);
+                EntityRenderers.register(PWEntities.PACARANA.get(), PacaranaRenderer::new);
         }
     }
 }
