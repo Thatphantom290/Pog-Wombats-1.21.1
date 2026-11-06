@@ -46,6 +46,7 @@ public class PogWombats {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(PWItems.WOMBAT_SPAWN_EGG);
+            event.accept(PWItems.PACARANA_SPAWN_EGG);
         }
     }
 

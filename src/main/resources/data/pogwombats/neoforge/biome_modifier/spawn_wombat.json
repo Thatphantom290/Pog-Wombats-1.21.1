@@ -3,7 +3,7 @@
   "biomes": "#minecraft:is_savanna",
   "spawners": {
     "type": "pogwombats:wombat",
-    "weight": 8,
+    "weight": 5,
     "minCount": 2,
     "maxCount": 4
   }
